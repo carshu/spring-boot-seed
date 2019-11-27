@@ -1,0 +1,23 @@
+project.name: yunzhi-message
+# http服务器端口
+server.port: 7001
+# endpoint配置
+management.port: 7002
+
+
+#上传文件大小限制
+spring.http.multipart.maxFileSize: 1000MB
+spring.http.multipart.maxRequestSize: 1000MB
+upload.filePath: /home/admin/yunzhi-message/uploadFile/
+
+
+#spring.jpa:
+#  properties.hibernate.dialect:  org.hibernate.dialect.MySQL5Dialect
+#  show-sql: true
+#  hibernate.ddl-auto: none
+
+logging.level.spring.jpa: info
+
+#spring.cache:
+#  caffeine.spec: expireAfterWrite=100s
+#  type: caffeine
