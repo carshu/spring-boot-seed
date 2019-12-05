@@ -1,4 +1,4 @@
-package com.github.carshu.seed;
+package com.github.yeqinyong.seed;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

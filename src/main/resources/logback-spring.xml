@@ -6,6 +6,8 @@
     <property name="LOG_PATH" value="${user.home}/${APP_NAME}/logs" />
     <property name="LOG_FILE" value="${LOG_PATH}/application.log" />
     <property name="LOG_TOPIC" value="${APP_NAME}-project" />
+	<property name="CONSOLE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS}) [%t] ${LOG_LEVEL_PATTERN:-%5p}) %-40.40logger{39}).%M - %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}%caller{2}"/>
+	<property name="FILE_LOG_PATTERN" value="${FILE_LOG_PATTERN:-%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
 
     <appender name="APPLICATION"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -24,16 +26,14 @@
 
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}) [%t] ${LOG_LEVEL_PATTERN:-%5p}) %-40.40logger{39}).%M - %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}%caller{2}</pattern>
             <charset>utf8</charset>
         </encoder>
     </appender>
 
 	<root level="info">
-		<!--<appender-ref ref="ALIMONITOR"/>-->
 		<appender-ref ref="CONSOLE"/>
 		<appender-ref ref="APPLICATION"/>
-		<appender-ref ref="LOGHUB"/>
 	</root>
 
 </configuration>
